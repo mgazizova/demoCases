@@ -17,6 +17,15 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: false
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: login
+                  value: "user"
+              - column:
+                  name: password
+                  value: "password"
         - createTable:
             tableName: cases
             columns:

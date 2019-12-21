@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: init
+      author: vtarasov
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: login
+                  type: varchar(255)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: cases
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: caseversion
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: background
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: casereferences
+                  type: varchar(255)
+                  constraints:
+                    nullable: true

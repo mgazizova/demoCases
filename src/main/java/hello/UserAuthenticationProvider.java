@@ -3,6 +3,7 @@ package hello;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -17,12 +18,9 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String login = authentication.getName();
-        String password = authentication.getCredentials().toString();
-        if (userRepository.getByLoginAndPassword(login, password).isPresent()) {
-            return new UsernamePasswordAuthenticationToken(login, password, new ArrayList<>());
-        }
-        return new UsernamePasswordAuthenticationToken(login, password);
+        return userRepository.getByLoginAndPassword(authentication.getName(), authentication.getCredentials().toString())
+            .map(user -> new UsernamePasswordAuthenticationToken(user.getLogin(), user.getPassword(), new ArrayList<>()))
+            .orElseThrow(() -> new BadCredentialsException("Login or password invalid"));
     }
 
     @Override

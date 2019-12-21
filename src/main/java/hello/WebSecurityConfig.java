@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .failureForwardUrl("/login")
+                .failureUrl("/login")
                 .and()
                 .httpBasic();
     }

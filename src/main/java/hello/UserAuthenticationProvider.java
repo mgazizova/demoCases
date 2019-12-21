@@ -8,10 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
-/**
- * @author vtarasov
- * @since 22.12.2019
- */
+
 @Component
 public class UserAuthenticationProvider implements AuthenticationProvider {
 

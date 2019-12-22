@@ -15,19 +15,21 @@
 <form class="w3-container w3-theme-l3 w3-padding-32" method="post" action="submitCase">
 
     <H6>Название</H6>
-    <input class="w3-input" type="text">
+    <input class="w3-input" type="text" name="title">
 
     <H6>Версия</H6>
-    <input class="w3-input" type="text">
+    <input class="w3-input" type="text" name="version">
 
     <H6>Тест-кейс</H6>
-    <textarea class="w3-input" rows="10"></textarea>
+    <textarea class="w3-input" rows="10" name="description"></textarea>
 
     <H6>Ссылки</H6>
-    <textarea class="w3-input" rows="3"></textarea>
-    <div class="w3-padding-24">
-            <button class="w3-btn w3-black" type="submit">Добавить</button>
-    </div>
+    <textarea class="w3-input" rows="3" name="refs"></textarea>
+    
+  <div class="w3-padding-24">
+      <button class="w3-btn w3-black" type="submit">Добавить</button>
+  </div>
+
 </form>
 
 </body>

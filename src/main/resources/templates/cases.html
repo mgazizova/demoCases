@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <title>Cases</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,6 +32,11 @@
             <th width="15%">ID</th>
             <th>Название</th>
             <th width="15%">Версия</th>
+        </tr>
+        <tr th:each="case: ${cases}">
+            <td th:text="${case.id}" />
+            <td th:text="${case.title}" />
+            <td th:text="${case.version}" />
         </tr>
     </table>
 </div>

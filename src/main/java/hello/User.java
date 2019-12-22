@@ -7,10 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * @author vtarasov
- * @since 22.12.2019
- */
+
 @Entity
 @Table(name = "user_")
 @Getter

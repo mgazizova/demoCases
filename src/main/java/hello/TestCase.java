@@ -1,6 +1,8 @@
 package hello;
 
+import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,27 +13,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "cases")
+@Table
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class Case {
+public class TestCase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "title")
     private String title;
 
-    @Column(name = "caseversion")
-    private String caseVersion;
+    private String version;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "background")
-    private String background;
-
-    @Column(name = "casereferences")
-    private String caseReferences;
+    @ElementCollection
+    @Column(name = "ref")
+    private List<String> refs;
 }

@@ -1,9 +1,9 @@
 package hello;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,13 +12,12 @@ import lombok.Setter;
  * @since 22.12.2019
  */
 @Entity
-@Table(name = "users")
+@Table(name = "user_")
 @Getter
 @Setter
+@EqualsAndHashCode(of = "login")
 public class User {
-
     @Id
     private String login;
-
     private String password;
 }

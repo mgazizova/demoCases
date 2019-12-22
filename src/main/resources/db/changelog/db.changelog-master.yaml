@@ -4,7 +4,7 @@ databaseChangeLog:
       author: vtarasov
       changes:
         - createTable:
-            tableName: users
+            tableName: user_
             columns:
               - column:
                   name: login
@@ -18,7 +18,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
         - insert:
-            tableName: users
+            tableName: user_
             columns:
               - column:
                   name: login
@@ -27,7 +27,7 @@ databaseChangeLog:
                   name: password
                   value: "password"
         - createTable:
-            tableName: cases
+            tableName: testcase
             columns:
               - column:
                   name: id
@@ -41,7 +41,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: caseversion
+                  name: version
                   type: varchar(255)
                   constraints:
                     nullable: false
@@ -50,13 +50,20 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: true
+        - createTable:
+            tableName: testcase_refs
+            columns:
               - column:
-                  name: background
+                  name: testcase_id
+                  type: integer
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_ref_id
+                    references: testcase(id)
+              - column:
+                  name: ref
                   type: varchar(255)
                   constraints:
-                    nullable: true
-              - column:
-                  name: casereferences
-                  type: varchar(255)
-                  constraints:
-                    nullable: true
+                    primaryKey: true
+                    nullable: false

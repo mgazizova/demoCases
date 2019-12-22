@@ -6,11 +6,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class MvcConfig implements WebMvcConfigurer {
-
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("cases");
-        registry.addViewController("/addCase").setViewName("addCase");
+        registry.addViewController("/addCaseForm").setViewName("addCase");
     }
-
 }

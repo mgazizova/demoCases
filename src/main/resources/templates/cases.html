@@ -24,19 +24,27 @@
 <div class="w3-container">
     <p>
         Вы можете просмотреть существующие кейсы или добавить новые
-        <a class="w3-button w3-large w3-circle w3-xlarge w3-ripple w3-grey" href="addCase" style="z-index:0">+</a>
+        <a class="w3-button w3-large w3-circle w3-xlarge w3-ripple w3-grey" href="/addCaseForm" style="z-index:0">+</a>
     </p>
+
+    <form method="post" action="/deleteCase" id="deleteCase"/>
 
     <table class="w3-table w3-bordered w3-striped">
         <tr class="w3-theme">
             <th width="15%">ID</th>
             <th>Название</th>
             <th width="15%">Версия</th>
+            <th width="10px">&nbsp;</th>
         </tr>
         <tr th:each="case: ${cases}">
-            <td th:text="${case.id}" />
+            <td>
+                <a th:text="${case.id}" th:href="'/cases/' + ${case.id}"></a>
+            </td>
             <td th:text="${case.title}" />
             <td th:text="${case.version}" />
+            <td>
+                <button type="submit" form="deleteCase" name="caseId" th:value="${case.id}"><b>X</b></button>
+            </td>
         </tr>
     </table>
 </div>

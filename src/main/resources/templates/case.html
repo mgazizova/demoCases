@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<title>Cases</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+
+
+<body>
+<header class="w3-container w3-theme">
+    <h1>My App</h1>
+</header>
+
+
+<!-- Navbar -->
+<div class="w3-theme-l2">
+    <div class="w3-bar w3-left-align w3-large">
+        <p>
+            <label th:text="${id} + ' ' + ${title}"></label>
+            <a class="w3-button w3-large w3-circle w3-xlarge w3-ripple w3-black" th:href="'/editCaseForm/' + ${id}" style="z-index:0">✎</a>
+        </p>
+    </div>
+</div>
+
+
+
+<div class="w3-container w3-large">
+    <div class="w3-left-align"><h2>Версия</h2><p th:text="${version}"></p></div>
+    <div class="w3-left-align"><h2>Описание</h2><p th:utext="${description}"></p></div>
+    <div class="w3-left-align"><h2>Ссылки</h2><p th:utext="${refs}"></p></div>
+</div>
+
+</body>
+</html>

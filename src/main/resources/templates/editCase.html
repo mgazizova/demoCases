@@ -12,24 +12,24 @@
     <h1>My App</h1>
 </header>
 
-<form class="w3-container" method="post" action="/editCase">
+<form class="w3-container w3-theme-l5 w3-padding-32" method="post" action="/createCase">
 
     <input type="hidden" name="caseId" th:value="${id}">
 
-    <label>Название</label>
+    <H6>Название</H6>
     <input class="w3-input" type="text" name="title" th:value="${title}">
 
-    <label>Версия</label>
+    <H6>Версия</H6>
     <input class="w3-input" type="text" name="version" th:value="${version}">
 
-    <label>Тест-кейс</label>
-    <textarea class="w3-input" rows="20" name="description" th:text="${description}"></textarea>
+    <H6>Тест-кейс</H6>
+    <textarea class="w3-input" rows="10" name="description" th:text="${description}"></textarea>
 
-    <label>Ссылки</label>
+    <H6>Ссылки</H6>
     <textarea class="w3-input" rows="3" name="refs" th:text="${refs}"></textarea>
-
-    <button class="w3-btn" type="submit">Изменить</button>
-
+    <div class="w3-padding-24">
+        <button class="w3-btn w3-black" type="submit">Изменить</button>
+    </div>
 </form>
 
 </body>

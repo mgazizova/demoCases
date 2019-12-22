@@ -27,7 +27,7 @@ databaseChangeLog:
                   name: password
                   value: "password"
         - createTable:
-            tableName: testcase
+            tableName: test_case
             columns:
               - column:
                   name: id
@@ -50,17 +50,20 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: true
+        - createSequence:
+            sequenceName: hibernate_sequence
+            startValue: 1
         - createTable:
-            tableName: testcase_refs
+            tableName: test_case_refs
             columns:
               - column:
-                  name: testcase_id
+                  name: test_case_id
                   type: integer
                   constraints:
                     primaryKey: true
                     nullable: false
                     foreignKeyName: fk_ref_id
-                    references: testcase(id)
+                    references: test_case(id)
               - column:
                   name: ref
                   type: varchar(255)

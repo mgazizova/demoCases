@@ -21,7 +21,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .failureUrl("/login")
                 .and()
-                .httpBasic();
+                .httpBasic()
+                .and()
+                .csrf()
+                .disable();;
     }
 
     @Override

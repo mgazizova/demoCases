@@ -12,21 +12,23 @@
     <h1>My App</h1>
 </header>
 
-<form class="w3-container" method="post" action="/createCase">
+<form class="w3-container w3-theme-l3 w3-padding-32" method="post" action="/createCase">
 
-    <label>Название</label>
+    <H6>Название</H6>
     <input class="w3-input" type="text" name="title">
 
-    <label>Версия</label>
+    <H6>Версия</H6>
     <input class="w3-input" type="text" name="version">
 
-    <label>Тест-кейс</label>
-    <textarea class="w3-input" rows="20" name="description"></textarea>
+    <H6>Тест-кейс</H6>
+    <textarea class="w3-input" rows="10" name="description"></textarea>
 
-    <label>Ссылки</label>
+    <H6>Ссылки</H6>
     <textarea class="w3-input" rows="3" name="refs"></textarea>
-
-    <button class="w3-btn" type="submit">Добавить</button>
+    
+  <div class="w3-padding-24">
+      <button class="w3-btn w3-black" type="submit">Добавить</button>
+  </div>
 
 </form>
 
